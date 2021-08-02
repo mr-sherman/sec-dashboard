@@ -1,0 +1,136 @@
+{
+    "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+    "version": "2.1.0",
+    "runs": [
+        {
+            "tool": {
+                "driver": {
+                    "name": "CodeQL",
+                    "organization": "GitHub",
+                    "semanticVersion": "2.5.8",
+                    "notifications": [
+                        {
+                            "id": "cs/diagnostics/extraction-errors",
+                            "name": "cs/diagnostics/extraction-errors",
+                            "shortDescription": {
+                                "text": "Extraction errors"
+                            },
+                            "fullDescription": {
+                                "text": "List all errors reported by the extractor or the compiler. Extractor errors are limited to those files where there are no compilation errors."
+                            },
+                            "defaultConfiguration": {
+                                "enabled": true
+                            },
+                            "properties": {
+                                "description": "List all errors reported by the extractor or the compiler. Extractor errors are\n              limited to those files where there are no compilation errors.",
+                                "id": "cs/diagnostics/extraction-errors",
+                                "kind": "diagnostic",
+                                "name": "Extraction errors"
+                            }
+                        },
+                        {
+                            "id": "cs/diagnostics/successfully-extracted-files",
+                            "name": "cs/diagnostics/successfully-extracted-files",
+                            "shortDescription": {
+                                "text": "Successfully extracted files"
+                            },
+                            "fullDescription": {
+                                "text": "A list of all files in the source code directory that were extracted without encountering an extraction or compiler error in the file."
+                            },
+                            "defaultConfiguration": {
+                                "enabled": true
+                            },
+                            "properties": {
+                                "description": "A list of all files in the source code directory that were extracted\n              without encountering an extraction or compiler error in the file.",
+                                "id": "cs/diagnostics/successfully-extracted-files",
+                                "kind": "diagnostic",
+                                "name": "Successfully extracted files"
+                            }
+                        }
+                    ],
+                    "rules": [
+                        {
+                            "id": "cs/useless-if-statement",
+                            "name": "cs/useless-if-statement",
+                            "shortDescription": {
+                                "text": "Futile conditional"
+                            },
+                            "fullDescription": {
+                                "text": "If-statement with an empty then-branch and no else-branch."
+                            },
+                            "defaultConfiguration": {
+                                "enabled": true,
+                                "level": "warning"
+                            },
+                            "properties": {
+                                "tags": [
+                                    "reliability",
+                                    "readability"
+                                ],
+                                "description": "If-statement with an empty then-branch and no else-branch.",
+                                "id": "cs/useless-if-statement",
+                                "kind": "problem",
+                                "name": "Futile conditional",
+                                "precision": "very-high",
+                                "problem.severity": "warning"
+                            }
+                        }
+                    ]
+                }
+            },
+            "artifacts": [
+                {
+                    "location": {
+                        "uri": "Quotes/Service/Quotes/OffsettingService.cs",
+                        "uriBaseId": "%SRCROOT%",
+                        "index": 0
+                    }
+                }
+            ],
+            "results": [
+                {
+                    "ruleId": "cs/useless-if-statement",
+                    "ruleIndex": 2,
+                    "rule": {
+                        "id": "cs/useless-if-statement",
+                        "index": 2
+                    },
+                    "message": {
+                        "text": "If-statement with an empty then-branch and no else-branch."
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "Quotes/Service/Quotes/OffsettingService.cs",
+                                    "uriBaseId": "%SRCROOT%",
+                                    "index": 0
+                                },
+                                "region": {
+                                    "startLine": 189,
+                                    "startColumn": 13,
+                                    "endLine": 196,
+                                    "endColumn": 14
+                                }
+                            }
+                        }
+                    ],
+                    "partialFingerprints": {
+                        "primaryLocationLineHash": "2e2adda6fd1d6aeb:1",
+                        "primaryLocationStartColumnFingerprint": "0"
+                    }
+                }
+            ],
+            "newlineSequences": [
+                "\r\n",
+                "\n",
+                "",
+                ""
+            ],
+            "columnKind": "utf16CodeUnits",
+            "properties": {
+                "semmle.formatSpecifier": "sarif-latest"
+            }
+        }
+    ]
+}
